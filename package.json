@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/cyc-seattle/admin-functions.git"
   },
-  "packageManager": "pnpm@10.34.6",
+  "packageManager": "pnpm@10.34.7",
   "prettier": "@cyc-seattle/ts-config/prettier",
   "dependencies": {
     "@commander-js/extra-typings": "^13.1.0",
