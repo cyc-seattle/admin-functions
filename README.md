@@ -1,11 +1,29 @@
-This package contains a CLI tool that runs reports that extracts data from Clubspot and copies it to various Google
+# admin-functions
+
+> **Archived.** The hourly job that ran these reports was retired in
+> [cyc-seattle/isthmia#206](https://github.com/cyc-seattle/isthmia/issues/206). The CRM's syncs
+> replace these reports. This code is kept as it was, for reference.
+
+A CLI tool that runs reports that extract data from Clubspot and copy it to various Google
 spreadsheets.
+
+## Install
+
+[mise](https://mise.jdx.dev/getting-started.html) provides Node and pnpm.
+
+```sh
+mise trust
+mise run install
+```
+
+`mise tasks` lists the rest: `check`, `test`, `format`, and `ci`.
 
 ## Authorization
 
 ### Clubspot
 
-Clubspot credentials are read from CLI arguments, which are also mapped to the following environment variables.
+Clubspot credentials are read from CLI arguments, which are also mapped to the following
+environment variables.
 
 ```
 CLUBSPOT_EMAIL="your email"
@@ -14,16 +32,21 @@ CLUBSPOT_PASSWORD="your password"
 
 ### Google
 
-This package authenticates to Google's APIs with [Application Default Credentials][google-adc]. Run
-`mise run auth-adc` from the repository root to point ADC at your own account.
+This package authenticates to Google's APIs with [Application Default Credentials][google-adc].
+Point ADC at your own account:
 
-The deployed job runs as `report-runner@cyc-admin-scripts.iam.gserviceaccount.com`, so a local run
-can see a different set of spreadsheets than production does.
+```sh
+gcloud auth application-default login
+```
 
 ## Running
 
-The CLI tool runs reports based on a config spreadsheet, which lists all of the reports to run and the source and
-destination parameters thereof.
+The CLI tool runs reports based on a config spreadsheet, which lists all of the reports to run and
+the source and destination parameters thereof.
+
+```sh
+pnpm exec tsx src/main.ts --help
+```
 
 For CYC Community Sailing Center, the dev config sheet is:
 
