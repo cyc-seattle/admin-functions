@@ -26,7 +26,7 @@ function buildReport(locale: string) {
 
   const options: ReportOptions = {
     arguments: "",
-    auth: {} as Auth,
+    auth: {} as Auth.GoogleAuth,
     spreadsheet,
     sheetName: "Test",
     interval: Interval.fromISO("2024-01-01/2024-01-02"),

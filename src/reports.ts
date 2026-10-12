@@ -5,7 +5,7 @@ import { Auth } from "googleapis";
 
 export interface ReportOptions {
   readonly arguments: string;
-  readonly auth: Auth;
+  readonly auth: Auth.GoogleAuth;
   readonly spreadsheet: Spreadsheet;
   readonly sheetName: string;
   readonly interval: Interval;
@@ -14,7 +14,7 @@ export interface ReportOptions {
 
 export abstract class Report {
   readonly arguments: string;
-  readonly auth: Auth;
+  readonly auth: Auth.GoogleAuth;
   readonly spreadsheet: Spreadsheet;
   readonly sheetName: string;
   readonly interval: Interval;

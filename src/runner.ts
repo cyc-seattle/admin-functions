@@ -59,7 +59,7 @@ function parseDate(input?: string): DateTime | undefined {
 export class ReportRunner {
   private readonly spreadsheets: SpreadsheetClient;
 
-  constructor(public readonly auth: Auth.GoogleApiAuth) {
+  constructor(public readonly auth: Auth.GoogleAuth) {
     this.spreadsheets = new SpreadsheetClient(auth);
   }
 
